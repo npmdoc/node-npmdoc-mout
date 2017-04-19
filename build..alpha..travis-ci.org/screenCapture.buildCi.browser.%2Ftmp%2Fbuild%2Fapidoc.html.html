@@ -6577,7 +6577,23 @@ module.exports = round;
 
     return obj[last];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Get current time in miliseconds
+ */
+function now(){
+    // yes, we defer the work to another function to allow mocking it
+    // during the tests
+    return now.<span class="apidocCodeKeywordSpan">get</span>();
+}
+
+now.get = (typeof Date.now === 'function')? Date.now : function(){
+    return +(new Date());
+};
+
+return now;
+...</pre></li>
     </ul>
 
 
@@ -7444,7 +7460,23 @@ if (end == null) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function random() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Get current time in miliseconds
+ */
+function now(){
+    // yes, we defer the work to another function to allow mocking it
+    // during the tests
+    return now.<span class="apidocCodeKeywordSpan">get</span>();
+}
+
+now.get = (typeof Date.now === 'function')? Date.now : function(){
+    return +(new Date());
+};
+
+return now;
+...</pre></li>
     </ul>
 
 
@@ -8382,7 +8414,23 @@ function expandCombinations(date, token, l10n){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function now() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Get current time in miliseconds
+ */
+function now(){
+    // yes, we defer the work to another function to allow mocking it
+    // during the tests
+    return now.<span class="apidocCodeKeywordSpan">get</span>();
+}
+
+now.get = (typeof Date.now === 'function')? Date.now : function(){
+    return +(new Date());
+};
+
+return now;
+...</pre></li>
     </ul>
 
 
