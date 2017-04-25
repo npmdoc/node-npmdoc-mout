@@ -2807,7 +2807,23 @@
 
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+See: [object/equals](object.html#equals), [lang/deepEquals](lang.html#deepEquals)
+
+
+
+## every(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">every</span>()`.
+
+Tests whether all elements in the array pass the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -2836,7 +2852,23 @@
 
     return results;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+every(items, &#x27;active&#x27;); // true
+```
+
+
+
+## filter(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">filter</span>()`.
+
+Creates a new array with all elements that pass the callback test.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -2968,7 +3000,23 @@
         }
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+See: [`object/flatten()`](./object.html#flatten)
+
+
+## forEach(arr, callback, [thisObj]):void
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">forEach</span>()`.
+
+It allows exiting the iteration early by returning `false` on the callback.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -3033,21 +3081,20 @@
     return -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var queryArr = (queryStr || &#x27;&#x27;).replace(&#x27;?&#x27;, &#x27;&#x27;).split(&#x27;&#x26;&#x27;),
-    reg = /([^=]+)=(.+)/,
-    i = -1,
-    obj = {},
-    equalIndex, cur, pValue, pName;
+// &#x3e; {&#x27;3&#x27;: [&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;], &#x27;5&#x27;: [&#x27;lorem&#x27;, &#x27;ipsum&#x27
+;]}
+```
 
-while ((cur = queryArr[++i])) {
-    equalIndex = cur.<span class="apidocCodeKeywordSpan">indexOf</span>(&#x27;=&#x27;);
-    pName = cur.substring(0, equalIndex);
-    pValue = decodeURIComponent(cur.substring(equalIndex + 1));
-    if (shouldTypecast !== false) {
-        pValue = typecast(pValue);
-    }
-    if (hasOwn(obj, pName)){
-        if(isArray(obj[pName])){
+
+
+## indexOf(arr, item, [fromIndex]):Number
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">indexOf</span>()`.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+more info at [MDN Array#indexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf)
 ...</pre></li>
     </ul>
 
@@ -3226,17 +3273,19 @@ module.exports = join;
     return -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+last( [1, 2, 3, 4] ) // &#x3e; 4
+last( [&#x27;foo&#x27;, &#x27;bar&#x27;] ) // &#x3e; &#x27;bar&#x27;
+```
 
-    str = trim(str);
-    if(str.length &#x3c;= maxChars){
-        return str;
-    }
-    str = str.substr(0, maxChars - append.length);
-    //crop at last space or remove trailing whitespace
-    str = onlyFullWords? str.substr(0, str.<span class="apidocCodeKeywordSpan">lastIndexOf</span>(&#x27; &#x27;)) : trim(str);
-    return str + append;
-}
-module.exports = truncate;
+
+## lastIndexOf(arr, item, [fromIndex]):Number
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">lastIndexOf</span>()`.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
 ...</pre></li>
     </ul>
 
@@ -3263,7 +3312,22 @@ module.exports = truncate;
 
     return results;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+
+
+
+## map(arr, callback, [thisObj]]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">map</span>()`.
+
+Creates a new array with the results of calling a provided function on every
+element in this array.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -3476,7 +3540,22 @@ if (end == null) {
 
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+range(20, 40, 5); // [20, 25, 30, 35, 40]
+```
+
+
+
+## reduce(arr, fn):*
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">reduce</span>()`.
+
+Apply a function against an accumulator and each value of the array (from
+left-to-right) as to reduce it to a single value.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -3514,7 +3593,22 @@ if (end == null) {
     }
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+more info at [MDN Array#reduce](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/reduce)
+
+
+
+## reduceRight(arr, fn):*
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">reduceRight</span>()`.
+
+Apply a function simultaneously against two values of the array (from
+right-to-left) as to reduce it to a single value.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -3723,7 +3817,23 @@ module.exports = reverse;
 
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+slice([1, 2, 3], -2); // [2, 3]
+```
+
+
+
+## some(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">some</span>()`.
+
+Tests whether some element in the array passes the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -3754,19 +3864,7 @@ module.exports = reverse;
 
     return merge(left, right, compareFn);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-function functions(obj){
-    var keys = [];
-    forIn(obj, function(val, key){
-        if (typeof val === &#x27;function&#x27;){
-            keys.push(key);
-        }
-    });
-    return keys.<span class="apidocCodeKeywordSpan">sort</span>();
-}
-
-module.exports = functions;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -3829,19 +3927,20 @@ module.exports = functions;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-var isPrimitive = require(&#x27;../lang/isPrimitive&#x27;);
+```js
+collect([1, 2, 3], function(val) {
+    return [val, val % 2];
+}); // [1, 1, 2, 0, 3, 1];
 
-    /**
-     * get &#x22;nested&#x22; object property
-     */
-    function get(obj, prop){
-var parts = prop.<span class="apidocCodeKeywordSpan">split</span>(&#x27;.&#x27;),
-    last = parts.pop();
+collect([&#x27;a&#x27;, &#x27;bb&#x27;, &#x27;&#x27;], function(val) {
+    return val.<span class="apidocCodeKeywordSpan">split</span>(&#x27;&#x27;);
+}); // [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;b&#x27;]
+```
 
-while (prop = parts.shift()) {
-    obj = obj[prop];
-    if (obj == null) return;
-}
+It also supports a shorthand syntax:
+
+```js
+var items = [{ a: [1] }, { b: &#x27;foo&#x27; }, { a: [2, 3] }];
 ...</pre></li>
     </ul>
 
@@ -4041,7 +4140,23 @@ while (prop = parts.shift()) {
     // array-like is treated as array
     return (typeof args[0].length === &#x27;number&#x27;)? arrMethod.apply(null, args) : objMethod.apply(null, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+See: [object/equals](object.html#equals), [lang/deepEquals](lang.html#deepEquals)
+
+
+
+## every(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">every</span>()`.
+
+Tests whether all elements in the array pass the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -4066,7 +4181,23 @@ while (prop = parts.shift()) {
     });
     return results;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+every(items, &#x27;active&#x27;); // true
+```
+
+
+
+## filter(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">filter</span>()`.
+
+Creates a new array with all elements that pass the callback test.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -4106,7 +4237,23 @@ while (prop = parts.shift()) {
     // array-like is treated as array
     return (typeof args[0].length === &#x27;number&#x27;)? arrMethod.apply(null, args) : objMethod.apply(null, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+See: [`object/flatten()`](./object.html#flatten)
+
+
+## forEach(arr, callback, [thisObj]):void
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">forEach</span>()`.
+
+It allows exiting the iteration early by returning `false` on the callback.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -4151,7 +4298,22 @@ while (prop = parts.shift()) {
         return callback(val, key, list);
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+
+
+
+## map(arr, callback, [thisObj]]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">map</span>()`.
+
+Creates a new array with the results of calling a provided function on every
+element in this array.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -4260,7 +4422,22 @@ if (end == null) {
     // array-like is treated as array
     return (typeof args[0].length === &#x27;number&#x27;)? arrMethod.apply(null, args) : objMethod.apply(null, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+range(20, 40, 5); // [20, 25, 30, 35, 40]
+```
+
+
+
+## reduce(arr, fn):*
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">reduce</span>()`.
+
+Apply a function against an accumulator and each value of the array (from
+left-to-right) as to reduce it to a single value.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -4319,7 +4496,23 @@ if (end == null) {
     // array-like is treated as array
     return (typeof args[0].length === &#x27;number&#x27;)? arrMethod.apply(null, args) : objMethod.apply(null, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+slice([1, 2, 3], -2); // [2, 3]
+```
+
+
+
+## some(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">some</span>()`.
+
+Tests whether some element in the array passes the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -4657,7 +4850,20 @@ if (end == null) {
     <li>description and source-code<pre class="apidocCodePre">set = function (localeData){
     mixIn(activeLocale, localeData);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+strftime(date, &#x27;%a, %d %b&#x27;, ptBr); // &#x27;Seg, 08 Abr&#x27;
+strftime(date, &#x27;%A, %d %B&#x27;, ptBr); // &#x27;Segunda, 08 Abril&#x27;
+```
+
+To set it globally:
+
+```js
+require(&#x27;mout/date/i18n_&#x27;).<span class="apidocCodeKeywordSpan">set</span>( customLocaleData );
+```
+
+See [date/i18n](https://github.com/mout/mout/tree/master/src/date/i18n)
+for localization examples.
+...</pre></li>
     </ul>
 
 
@@ -5279,7 +5485,22 @@ if (end == null) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+If value is an &#x22;Arguments&#x22; object.
+
+
+
+## isArray(val):Boolean
+
+If value is an Array. Uses native ES5 `Array.<span class="apidocCodeKeywordSpan">isArray</span>()` if available.
+
+
+
+## isBoolean(val):Boolean
+
+If value is a Boolean.
+...</pre></li>
     </ul>
 
 
@@ -5438,7 +5659,23 @@ function isFinite(val){
     // also need to coerce ToNumber to avoid edge case `new Number(NaN)`
     return !isNumber(val) || $isNaN(Number(val));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++(0.615).toFixed(2);        // 0.61
++(0.625).toFixed(2);        // 0.63
+```
+
+
+## isNaN(val):Boolean
+
+ES6 `Number.<span class="apidocCodeKeywordSpan">isNaN</span>()`, checks if supplied value is `NaN`.
+
+```js
+// only returns `true` for `NaN`
+isNaN(NaN);    // true
+isNaN(0 / 0);  // true
+
+// everything else is `false`
+...</pre></li>
     </ul>
 
 
@@ -5713,17 +5950,21 @@ module.exports = timezoneAbbr;
     return Math.ceil(val / step) * step;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+# math #
+
+Math utilities.
 
 
-/**
- * Round value up with a custom radix.
- */
-function ceil(val, step){
-    step = Math.abs(step || 1);
-    return Math.<span class="apidocCodeKeywordSpan">ceil</span>(val / step) * step;
-}
+## ceil(val[, step]):Number
 
-module.exports = ceil;
+Round value up to full steps. Similar to `Math.<span class="apidocCodeKeywordSpan">ceil</span>()` but can round value
+to an arbitrary *radix*.
+
+ceil(7.2);   // 8
+ceil(7.8);   // 8
+ceil(7, 5);  // 10
+ceil(11, 5); // 15
+ceil(15, 5); // 15
 ...</pre></li>
     </ul>
 
@@ -5868,7 +6109,22 @@ while (i &#x3c; len) {
     <li>description and source-code<pre class="apidocCodePre">function map(val, min1, max1, min2, max2){
     return lerp( norm(val, min1, max1), min2, max2 );
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+
+
+
+## map(arr, callback, [thisObj]]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">map</span>()`.
+
+Creates a new array with the results of calling a provided function on every
+element in this array.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -5930,17 +6186,20 @@ while (i &#x3c; len) {
     return Math.round(value / radix) * radix;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+overflow(-10, -7, -1); // -4
+
+See: [`loop()`](#loop)
 
 
-/**
- * Round number to a specific radix
- */
-function round(value, radix){
-    radix = radix || 1; // default round 1
-    return Math.<span class="apidocCodeKeywordSpan">round</span>(value / radix) * radix;
-}
+## round(val[, step]):Number
 
-module.exports = round;
+Round value to full steps. Similar to `Math.<span class="apidocCodeKeywordSpan">round</span>()` but allow setting an
+arbitrary *radix*.
+
+// default
+round(0.22);      // 0
+round(0.49);      // 0
+round(0.51);      // 1
 ...</pre></li>
     </ul>
 
@@ -6041,7 +6300,23 @@ module.exports = round;
     // jshint eqeqeq:false
     return typeof val === &#x27;number&#x27; &#x26;&#x26; val != val;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++(0.615).toFixed(2);        // 0.61
++(0.625).toFixed(2);        // 0.63
+```
+
+
+## isNaN(val):Boolean
+
+ES6 `Number.<span class="apidocCodeKeywordSpan">isNaN</span>()`, checks if supplied value is `NaN`.
+
+```js
+// only returns `true` for `NaN`
+isNaN(NaN);    // true
+isNaN(0 / 0);  // true
+
+// everything else is `false`
+...</pre></li>
     </ul>
 
 
@@ -6381,7 +6656,23 @@ module.exports = round;
     });
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+See: [object/equals](object.html#equals), [lang/deepEquals](lang.html#deepEquals)
+
+
+
+## every(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">every</span>()`.
+
+Tests whether all elements in the array pass the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -6426,7 +6717,23 @@ module.exports = round;
 
     return output;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+every(items, &#x27;active&#x27;); // true
+```
+
+
+
+## filter(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">filter</span>()`.
+
+Creates a new array with all elements that pass the callback test.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -6584,23 +6891,7 @@ module.exports = round;
 
     return obj[last];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-/**
- * Get current time in miliseconds
- */
-function now(){
-    // yes, we defer the work to another function to allow mocking it
-    // during the tests
-    return now.<span class="apidocCodeKeywordSpan">get</span>();
-}
-
-now.get = (typeof Date.now === &#x27;function&#x27;)? Date.now : function(){
-    return +(new Date());
-};
-
-return now;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -6664,7 +6955,22 @@ return now;
 
     return output;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+more info at [MDN Array#lastIndexOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+
+
+
+## map(arr, callback, [thisObj]]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">map</span>()`.
+
+Creates a new array with the results of calling a provided function on every
+element in this array.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -6926,7 +7232,22 @@ if (end == null) {
 
     return memo;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+range(20, 40, 5); // [20, 25, 30, 35, 40]
+```
+
+
+
+## reduce(arr, fn):*
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">reduce</span>()`.
+
+Apply a function against an accumulator and each value of the array (from
+left-to-right) as to reduce it to a single value.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+...</pre></li>
     </ul>
 
 
@@ -6985,7 +7306,20 @@ if (end == null) {
         obj[prop] = val;
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+strftime(date, &#x27;%a, %d %b&#x27;, ptBr); // &#x27;Seg, 08 Abr&#x27;
+strftime(date, &#x27;%A, %d %B&#x27;, ptBr); // &#x27;Segunda, 08 Abril&#x27;
+```
+
+To set it globally:
+
+```js
+require(&#x27;mout/date/i18n_&#x27;).<span class="apidocCodeKeywordSpan">set</span>( customLocaleData );
+```
+
+See [date/i18n](https://github.com/mout/mout/tree/master/src/date/i18n)
+for localization examples.
+...</pre></li>
     </ul>
 
 
@@ -7027,7 +7361,23 @@ if (end == null) {
     });
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+slice([1, 2, 3], -2); // [2, 3]
+```
+
+
+
+## some(arr, callback, [thisObj]):Array
+
+Crossbrowser `Array.<span class="apidocCodeKeywordSpan">some</span>()`.
+
+Tests whether some element in the array passes the test implemented by the provided function.
+
+It differs from ES5 since it will also loop over sparse items in the array to
+normalize the behavior across browsers (avoid inconsistencies).
+
+```js
+...</pre></li>
     </ul>
 
 
@@ -7262,7 +7612,23 @@ if (end == null) {
     <li>description and source-code<pre class="apidocCodePre">function random(){
     return random.get();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+choice(-1, 1);
+```
+
+
+
+## random():Number
+
+Returns a random number between `0` and `1`. Same as `Math.<span class="apidocCodeKeywordSpan">random</span>()`.
+
+```js
+random(); // 0.35435103671625257
+random(); // 0.8768321881070733
+```
+
+**Important:** No methods inside mout should call `Math.random()`
+...</pre></li>
     </ul>
 
 
@@ -7454,7 +7820,23 @@ if (end == null) {
     <li>description and source-code<pre class="apidocCodePre">function random(){
     return random.get();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+choice(-1, 1);
+```
+
+
+
+## random():Number
+
+Returns a random number between `0` and `1`. Same as `Math.<span class="apidocCodeKeywordSpan">random</span>()`.
+
+```js
+random(); // 0.35435103671625257
+random(); // 0.8768321881070733
+```
+
+**Important:** No methods inside mout should call `Math.random()`
+...</pre></li>
     </ul>
 
 
@@ -7467,23 +7849,7 @@ if (end == null) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function random() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-/**
- * Get current time in miliseconds
- */
-function now(){
-    // yes, we defer the work to another function to allow mocking it
-    // during the tests
-    return now.<span class="apidocCodeKeywordSpan">get</span>();
-}
-
-now.get = (typeof Date.now === &#x27;function&#x27;)? Date.now : function(){
-    return +(new Date());
-};
-
-return now;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -8341,7 +8707,22 @@ function expandCombinations(date, token, l10n){
     // during the tests
     return now.get();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+
+
+## now():Number
+
+Returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.
+Uses `Date.<span class="apidocCodeKeywordSpan">now</span>()` if available.
+
+### Example
+
+```js
+now(); // 1335449614650
+```
+...</pre></li>
     </ul>
 
 
@@ -8408,7 +8789,22 @@ function expandCombinations(date, token, l10n){
     // during the tests
     return now.get();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+
+
+## now():Number
+
+Returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.
+Uses `Date.<span class="apidocCodeKeywordSpan">now</span>()` if available.
+
+### Example
+
+```js
+now(); // 1335449614650
+```
+...</pre></li>
     </ul>
 
 
@@ -8421,23 +8817,7 @@ function expandCombinations(date, token, l10n){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function now() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-/**
- * Get current time in miliseconds
- */
-function now(){
-    // yes, we defer the work to another function to allow mocking it
-    // during the tests
-    return now.<span class="apidocCodeKeywordSpan">get</span>();
-}
-
-now.get = (typeof Date.now === &#x27;function&#x27;)? Date.now : function(){
-    return +(new Date());
-};
-
-return now;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
