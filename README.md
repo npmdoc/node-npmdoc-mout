@@ -1,6 +1,6 @@
 # npmdoc-mout
 
-#### api documentation for  [mout (v1.0.0)](http://moutjs.com/)  [![npm package](https://img.shields.io/npm/v/npmdoc-mout.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mout) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mout.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mout)
+#### basic api documentation for  [mout (v1.0.0)](http://moutjs.com/)  [![npm package](https://img.shields.io/npm/v/npmdoc-mout.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mout) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mout.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mout)
 
 #### Modular Utilities
 
@@ -154,7 +154,8 @@
             "tests/runner.js"
         ]
     },
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "bin": {}
 }
 ```
 

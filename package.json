@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "mout",
-    "description": "#### api documentation for  [mout (v1.0.0)](http://moutjs.com/)  [![npm package](https://img.shields.io/npm/v/npmdoc-mout.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mout) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mout.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mout)",
+    "description": "#### basic api documentation for  [mout (v1.0.0)](http://moutjs.com/)  [![npm package](https://img.shields.io/npm/v/npmdoc-mout.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mout) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mout.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mout)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "mout": "*",
